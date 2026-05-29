@@ -37,12 +37,12 @@ export function Editor({ content, onChange, readOnly }: EditorProps) {
       <div className="flex flex-1 overflow-hidden">
         <div className="w-14 min-w-14 py-5 bg-slate-100 border-r border-slate-200 overflow-hidden select-none" ref={lineNumbersRef}>
           {lines.map((num) => (
-            <div key={num} className="h-6 leading-6 pr-4 text-right font-mono text-[13px] text-slate-400 transition-colors duration-150 hover:text-slate-600">{num}</div>
+            <div key={num} className="h-6 leading-6 pr-4 text-right font-sans text-[13px] text-slate-400 transition-colors duration-150 hover:text-slate-600">{num}</div>
           ))}
         </div>
         <textarea
           ref={textareaRef}
-          className={`flex-1 p-5 bg-transparent border-none outline-none resize-none font-mono text-sm leading-6 whitespace-pre overflow-auto caret-cyan-500 placeholder:text-slate-300 placeholder:italic ${readOnly ? 'text-slate-500 cursor-default' : 'text-slate-800'}`}
+          className={`flex-1 p-5 bg-transparent border-none outline-none resize-none font-sans text-sm leading-6 whitespace-pre overflow-auto caret-cyan-500 placeholder:text-slate-300 placeholder:italic ${readOnly ? 'text-slate-500 cursor-default' : 'text-slate-800'}`}
           value={content}
           onChange={(e) => onChange(e.target.value)}
           readOnly={readOnly}

@@ -10,7 +10,7 @@ export default {
         'editor-bg': '#0d0d14',
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        sans: ['Poppins', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
       }
     },
