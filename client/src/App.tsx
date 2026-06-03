@@ -32,8 +32,7 @@ function App() {
   }, [editor.saveStatus, timeline.refreshHistory]);
 
   return (
-    <div className={`relative flex flex-col w-screen h-screen m-0 p-0 bg-slate-50 overflow-hidden ${editor.saveStatus === 'saving' ? 'animate-pulse' : ''}`}>
-      <div className="absolute inset-0 z-0 pointer-events-none bg-[radial-gradient(ellipse_at_20%_50%,rgba(6,182,212,0.1)_0%,transparent_50%),radial-gradient(ellipse_at_80%_50%,rgba(139,92,246,0.1)_0%,transparent_50%)]" />
+    <div className={`relative flex flex-col w-screen h-screen m-0 p-0 bg-white overflow-hidden ${editor.saveStatus === 'saving' ? 'animate-pulse' : ''}`}>
       <div className="relative z-10 flex flex-col h-full w-full">
         <StatusBar
           saveStatus={editor.saveStatus}

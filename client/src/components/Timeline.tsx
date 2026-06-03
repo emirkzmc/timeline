@@ -95,9 +95,16 @@ export function Timeline({ history, selectedId, onSelectVersion, onReturnToLates
             <div className="absolute left-0 right-0 h-1.5 rounded-[3px] bg-slate-200 pointer-events-none">
               {/* Active track fill */}
               <motion.div 
-                className="absolute left-0 top-0 bottom-0 rounded-[3px] bg-[linear-gradient(90deg,#06b6d4,#8b5cf6)]"
+                className="absolute left-0 top-0 bottom-0 rounded-[3px]"
+                style={{ backgroundSize: '300% 100%' }}
                 initial={false}
-                animate={{ width: `${percentage}%` }}
+                animate={{ 
+                  width: `${percentage}%`,
+                  backgroundPosition: `${percentage}% 0%`,
+                  backgroundImage: isScrolling
+                    ? 'linear-gradient(90deg, #06b6d4, #a78bfa, #f472b6, #8b5cf6)'
+                    : 'linear-gradient(90deg, #06b6d4, #8b5cf6)',
+                }}
                 transition={{ type: 'spring', stiffness: 400, damping: 30 }}
               />
             </div>

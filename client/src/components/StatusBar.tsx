@@ -71,7 +71,7 @@ export function StatusBar({ saveStatus, currentSnapshot, isReadOnly, onReturnToL
           </button>
         ) : (
           <div className="flex items-center gap-2 font-sans text-[11px] font-bold tracking-[1.5px] text-emerald-500">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.6)] animate-pulse"></span>
+            
             LIVE
           </div>
         )}

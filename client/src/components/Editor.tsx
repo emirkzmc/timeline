@@ -42,7 +42,7 @@ export function Editor({ content, onChange, readOnly }: EditorProps) {
         </div>
         <textarea
           ref={textareaRef}
-          className={`flex-1 p-5 bg-transparent border-none outline-none resize-none font-sans text-sm leading-6 whitespace-pre overflow-auto caret-cyan-500 placeholder:text-slate-300 placeholder:italic ${readOnly ? 'text-slate-500 cursor-default' : 'text-slate-800'}`}
+          className={`flex-1 p-5 bg-transparent border-none outline-none resize-none font-sans text-sm leading-6 whitespace-pre overflow-auto placeholder:text-slate-300 placeholder:italic ${readOnly ? 'text-slate-500 cursor-default' : 'text-slate-800'}`}
           value={content}
           onChange={(e) => onChange(e.target.value)}
           readOnly={readOnly}
