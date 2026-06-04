@@ -1,5 +1,5 @@
 import { API_BASE_URL } from '../constants';
-import type { Snapshot, SnapshotHistoryItem } from '../types/snapshot.types';
+import type { Snapshot, SnapshotHistoryItem } from '../domains';
 import { SnapshotMethodNames } from './methodNames';
 
 export const snapshotApi = {

@@ -1,7 +1,7 @@
 import { Controller, Get, Post, Body, Param, Query, ParseIntPipe, HttpCode, HttpStatus } from '@nestjs/common';
 
 import { SnapshotService } from './snapshot.service.js';
-import type { CreateSnapshotPayload } from '../../types/snapshot.types.js';
+import type { CreateSnapshotPayload } from '../../domains/index.js';
 
 @Controller('snapshot')
 export class SnapshotController {

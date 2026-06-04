@@ -2,7 +2,7 @@ import { Injectable, Inject } from '@nestjs/common';
 import { Pool } from 'pg';
 
 import { DB_POOL } from '../../db/postgres.js';
-import type { Snapshot, SnapshotHistoryItem } from '../../types/snapshot.types.js';
+import type { Snapshot, SnapshotHistoryItem } from '../../domains/index.js';
 
 @Injectable()
 export class SnapshotRepository {

@@ -1,11 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 
 import { SnapshotRepository } from './snapshot.repository.js';
-import type { Snapshot, SnapshotHistoryItem } from '../../types/snapshot.types.js';
-
-export interface SnapshotWithEditState extends Snapshot {
-  is_editable: boolean;
-}
+import type { Snapshot, SnapshotHistoryItem, SnapshotWithEditState } from '../../domains/index.js';
 
 @Injectable()
 export class SnapshotService {

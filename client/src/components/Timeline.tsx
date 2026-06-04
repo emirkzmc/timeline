@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 
-import type { SnapshotHistoryItem } from '../types/snapshot.types';
+import type { SnapshotHistoryItem } from '../domains';
 
 interface TimelineProps {
   history: SnapshotHistoryItem[];

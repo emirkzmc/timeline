@@ -1,4 +1,4 @@
-import type { Snapshot } from '../types/snapshot.types';
+import type { Snapshot } from '../domains';
 
 type SaveStatus = 'idle' | 'saving' | 'saved' | 'error';
 

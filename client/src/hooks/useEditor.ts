@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 
 import { snapshotApi } from '../api/snapshotApi';
 import { DEBOUNCE_DELAY_MS } from '../constants';
-import type { Snapshot } from '../types/snapshot.types';
+import type { Snapshot } from '../domains';
 
 type SaveStatus = 'idle' | 'saving' | 'saved' | 'error';
 

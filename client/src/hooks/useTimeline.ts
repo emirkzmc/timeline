@@ -1,8 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
-
 import { snapshotApi } from '../api/snapshotApi';
 import { HISTORY_FETCH_LIMIT } from '../constants';
-import type { Snapshot, SnapshotHistoryItem } from '../types/snapshot.types';
+import type { Snapshot, SnapshotHistoryItem } from '../domains';
 
 interface UseTimelineReturn {
   history: SnapshotHistoryItem[];

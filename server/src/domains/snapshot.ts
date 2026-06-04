@@ -17,3 +17,7 @@ export interface SnapshotHistoryItem {
   created_at: string;
   content_length: number;
 }
+
+export interface SnapshotWithEditState extends Snapshot {
+  is_editable: boolean;
+}
