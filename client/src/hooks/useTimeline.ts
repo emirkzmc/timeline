@@ -1,7 +1,12 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
-import { snapshotApi } from '../api/snapshotApi';
+
 import { HISTORY_FETCH_LIMIT } from '../constants';
+import type { SnapshotApiContract } from '../api/snapshotApi.types';
 import type { Snapshot, SnapshotHistoryItem } from '../domains';
+
+interface UseTimelineDeps {
+  api: Pick<SnapshotApiContract, 'getHistory' | 'getById'>;
+}
 
 interface UseTimelineReturn {
   history: SnapshotHistoryItem[];
@@ -11,7 +16,7 @@ interface UseTimelineReturn {
   refreshHistory: () => Promise<void>;
 }
 
-export function useTimeline(): UseTimelineReturn {
+export function useTimeline({ api }: UseTimelineDeps): UseTimelineReturn {
   const [history, setHistory] = useState<SnapshotHistoryItem[]>([]);
   const [selectedId, setSelectedId] = useState<number | null>(null);
   const isViewingLatestRef = useRef(false);
@@ -21,14 +26,14 @@ export function useTimeline(): UseTimelineReturn {
   }, [history, selectedId]);
 
   const refreshHistory = useCallback(async () => {
-    const items = await snapshotApi.getHistory(HISTORY_FETCH_LIMIT, 0);
+    const items = await api.getHistory(HISTORY_FETCH_LIMIT, 0);
     setHistory(items);
     if (items.length > 0) {
       if (selectedId === null || isViewingLatestRef.current) {
         setSelectedId(items[0].id);
       }
     }
-  }, [selectedId]);
+  }, [api, selectedId]);
 
   useEffect(() => {
     refreshHistory();
@@ -38,8 +43,8 @@ export function useTimeline(): UseTimelineReturn {
 
   const selectVersion = useCallback(async (id: number): Promise<Snapshot> => {
     setSelectedId(id);
-    return snapshotApi.getById(id);
-  }, []);
+    return api.getById(id);
+  }, [api]);
 
   return { history, selectedId, isViewingLatest, selectVersion, refreshHistory };
 }

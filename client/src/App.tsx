@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef } from 'react';
 
+import { snapshotApi } from './api/snapshotApi';
 import { useEditor } from './hooks/useEditor';
 import { useTimeline } from './hooks/useTimeline';
 import { StatusBar } from './components/StatusBar';
@@ -7,8 +8,8 @@ import { Editor } from './components/Editor';
 import { Timeline } from './components/Timeline';
 
 function App() {
-  const editor = useEditor();
-  const timeline = useTimeline();
+  const editor = useEditor({ api: snapshotApi });
+  const timeline = useTimeline({ api: snapshotApi });
   const prevSaveStatusRef = useRef(editor.saveStatus);
 
   const handleSelectVersion = useCallback(async (id: number) => {
